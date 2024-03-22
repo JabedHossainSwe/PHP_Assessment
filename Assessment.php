@@ -1,3 +1,4 @@
+<!-- assessment -->
 <?php
 // Main function to calculate total time required for each person to fill up their water bottle
 function calculateFillTime($queue, $numTaps) {
@@ -116,15 +117,15 @@ $numTaps = 1;
 
 try {
     $fillTime = calculateFillTime($queue, $numTaps);
-    echo "Total time to fill bottles without walking time: $fillTime seconds\n";
+    echo "Total time to fill bottles without walking time: $fillTime seconds"."<br>";
 
     $walkTime = 2; // 2 seconds walking time
     $fillTimeWithWalk = calculateFillTimeWithWalk($queue, $numTaps, $walkTime);
-    echo "Total time to fill bottles with walking time: $fillTimeWithWalk seconds\n";
+    echo "Total time to fill bottles with walking time: $fillTimeWithWalk seconds"."<br>";
 
     $tapFlowRates = [100]; // Flow rate of tap (ml per second)
     $fillTimeWithDiffFlow = calculateFillTimeWithDifferentFlowRates($queue, $tapFlowRates);
-    echo "Total time to fill bottles with different flow rates: $fillTimeWithDiffFlow seconds\n";
+    echo "Total time to fill bottles with different flow rates: $fillTimeWithDiffFlow seconds";
 } catch (InvalidArgumentException $e) {
     echo "Error: " . $e->getMessage();
 }
